@@ -29,6 +29,7 @@
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+html,body{overflow-x:hidden;}
 body{
   margin:0;font-family:var(--font);color:var(--ink);
   background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;
@@ -325,7 +326,8 @@ h3{font-size:1.3rem;}
    JAK DZIAŁA PROGRAM
 ===================================================== */
 .how{background:var(--paper);padding:110px 0;}
-.how-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px;}
+.how-cols{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:44px;align-items:start;}
+.how-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:20px}
 .how-card{
   background:#fff;border:1.5px solid var(--line);border-radius:var(--r-md);padding:28px 26px;
   transition:transform .25s ease,box-shadow .25s ease;
@@ -341,7 +343,13 @@ h3{font-size:1.3rem;}
 .hc-violet{background:#e4dfff;}
 .how-card h3{font-size:1.12rem;margin-bottom:8px;}
 .how-card p{margin:0;color:var(--ink-soft);font-size:.95rem;}
-.paths-strip{margin-top:36px;background:#fff;border:2px dashed var(--orange);border-radius:var(--r-md);padding:22px 26px;}
+
+/* paths dosunięte do góry kolumny */
+.paths-strip{
+  margin-top:0;                 /* było 36px — teraz zbędne */
+  background:#fff;border:2px dashed var(--orange);border-radius:var(--r-md);padding:22px 26px;
+  position:sticky;top:90px;     /* opcjonalnie: pasek „trzyma się” przy scrollu */
+}
 .paths-label{margin:0 0 12px;color:var(--orange-deep);font-size:1.2rem;transform:rotate(-1deg);display:inline-block;}
 .paths-chips{display:flex;flex-wrap:wrap;gap:10px;}
 .paths-chips span{
@@ -753,6 +761,8 @@ footer .brand-txt small{color:#a99cc9;font-family:var(--font);font-weight:500;te
   .mentor-grid{grid-template-columns:1fr 1fr;}
   .stats-card{grid-template-columns:repeat(2,1fr);gap:34px 14px;}
   .define-photo{max-width:440px;}
+  .how-cols{grid-template-columns:1fr;}
+  .paths-strip{position:static;}   /* wyłącz sticky na mobile */
 }
 @media(max-width:720px){
   .nav-links,.nav-cta{display:none;}
