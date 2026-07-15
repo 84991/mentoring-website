@@ -171,13 +171,58 @@
     updateRows();
   }
 
-  /* ---------- FAQ: jedno otwarte ---------- */
-  var faqs = document.querySelectorAll(".faq details");
-  faqs.forEach(function (d) {
-    d.addEventListener("toggle", function () {
-      if (d.open) faqs.forEach(function (o) { if (o !== d) o.open = false; });
-    });
+/* ---------- FAQ: jedno otwarte + smooth ---------- */
+const faqs = document.querySelectorAll(".faq details");
+
+faqs.forEach(details => {
+  const content = details.querySelector(".fq-a");
+
+  // ustaw stan początkowy
+  if (details.open) {
+    content.style.height = content.scrollHeight + "px";
+  }
+
+  details.addEventListener("toggle", () => {
+
+    if (details.open) {
+
+      // zamknij pozostałe
+      faqs.forEach(other => {
+        if (other !== details && other.open) {
+          other.querySelector(".fq-a").style.height =
+            other.querySelector(".fq-a").scrollHeight + "px";
+
+          requestAnimationFrame(() => {
+            other.querySelector(".fq-a").style.height = "0px";
+          });
+
+          setTimeout(() => {
+            other.open = false;
+          }, 350);
+        }
+      });
+
+      // otwieranie
+      content.style.height = "0px";
+
+      requestAnimationFrame(() => {
+        content.style.height = content.scrollHeight + "px";
+      });
+
+    } else {
+
+      // zamykanie
+      content.style.height = content.scrollHeight + "px";
+
+      requestAnimationFrame(() => {
+        content.style.height = "0px";
+      });
+
+    }
+
   });
+
+});
 
   /* ---------- newsletter ---------- */
   var newsForm = document.getElementById("newsForm");

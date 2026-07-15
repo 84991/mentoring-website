@@ -661,7 +661,7 @@ h3{font-size:1.3rem;}
 .faq details[open] .fq-ic{transform:rotate(180deg);background:var(--orange);}
 .faq details[open] .fq-ic::before,.faq details[open] .fq-ic::after{background:#fff;}
 .faq details[open] .fq-ic::after{transform:translate(-50%,-50%) scaleY(0);}
-.fq-a{padding:0 24px;}
+.fq-a{padding:0 24px; height:0; overflow:hidden; transition:height .35s ease;}
 .fq-a p{margin:0 0 22px;color:var(--ink-soft);font-size:.95rem;max-width:66ch;}
 
 /* =====================================================
