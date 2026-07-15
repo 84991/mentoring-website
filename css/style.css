@@ -518,11 +518,11 @@ h3{font-size:1.3rem;}
   padding:6px 0;
 }
 .sg-row figure{
-  margin:0;width:250px;flex:0 0 auto;border-radius:var(--r-md);overflow:hidden;
+  margin:0;width:220px;flex:0 0 auto;border-radius:var(--r-md);overflow:hidden;
   box-shadow:0 16px 34px rgba(41,25,66,.16);transform:rotate(-1deg);
 }
 .sg-row:nth-child(2) figure{transform:rotate(1.2deg);}
-.sg-row img{width:100%;height:310px;object-fit:cover;transition:transform .4s ease;}
+.sg-row img{width:100%;height:260px;object-fit:cover;transition:transform .4s ease;}
 .sg-row figure:hover img{transform:scale(1.06);}
 
 /* =====================================================
@@ -637,7 +637,7 @@ h3{font-size:1.3rem;}
    FAQ
 ===================================================== */
 .faq{background:#fff;padding:110px 0;}
-.faq-list{margin-top:44px;display:grid;gap:14px;max-width:860px;}
+.faq-list{margin-top:44px;display:grid;gap:14px;}
 .faq details{
   background:var(--paper);border:1.5px solid var(--line);border-radius:18px;overflow:hidden;
   transition:box-shadow .2s ease,border-color .2s ease;
@@ -663,6 +663,34 @@ h3{font-size:1.3rem;}
 .faq details[open] .fq-ic::after{transform:translate(-50%,-50%) scaleY(0);}
 .fq-a{padding:0 24px; height:0; overflow:hidden; transition:height .35s ease;}
 .fq-a p{margin:0 0 22px;color:var(--ink-soft);font-size:.95rem;max-width:66ch;}
+
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:90px;align-items:center;}
+.faq-photo{position:relative; padding-top:30px;}
+.photo-spin{
+  position:relative;
+  transform:rotate(-2.5deg);
+  transition:transform .35s ease;
+}
+.photo-spin:hover{transform:rotate(0deg) scale(1.02);}
+.photo-spin img{
+  border-radius:var(--r-lg);
+  box-shadow:0 30px 60px rgba(41,25,66,.22);
+  width:90%;
+}
+.faq-star{
+  width:48px;
+  top:-28px;
+  right:-16px;
+  color:#fff;
+  animation:none;
+}
+.faq-star path{
+  fill:none;
+  stroke:#fff;
+  stroke-width:2.4;
+  stroke-linejoin:round;
+  stroke-linecap:round;
+}
 
 /* =====================================================
    NEWSLETTER — FIX przejścia fal
