@@ -326,7 +326,8 @@ h3{font-size:1.3rem;}
    JAK DZIAŁA PROGRAM
 ===================================================== */
 .how{background:var(--paper);padding:110px 0;}
-.how-cols{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:44px;align-items:start;}
+.how-cols{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:44px;align-items:stretch;}
+.how-side{display:flex;flex-direction:column;gap:24px;height:100%;} /* prawa kolumna: ścieżki + zdjęcie jedno pod drugim, wypełnia wysokość */
 .how-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:20px}
 .how-card{
   background:#fff;border:1.5px solid var(--line);border-radius:var(--r-md);padding:28px 26px;
@@ -344,11 +345,9 @@ h3{font-size:1.3rem;}
 .how-card h3{font-size:1.12rem;margin-bottom:8px;}
 .how-card p{margin:0;color:var(--ink-soft);font-size:.95rem;}
 
-/* paths dosunięte do góry kolumny */
 .paths-strip{
-  margin-top:0;                 /* było 36px — teraz zbędne */
+  margin-top:0;
   background:#fff;border:2px dashed var(--orange);border-radius:var(--r-md);padding:22px 26px;
-  position:sticky;top:90px;     /* opcjonalnie: pasek „trzyma się” przy scrollu */
 }
 .paths-label{margin:0 0 12px;color:var(--orange-deep);font-size:1.2rem;transform:rotate(-1deg);display:inline-block;}
 .paths-chips{display:flex;flex-wrap:wrap;gap:10px;}
@@ -357,6 +356,13 @@ h3{font-size:1.3rem;}
   transition:transform .2s ease,background .2s ease;
 }
 .paths-chips span:hover{background:var(--yellow);transform:rotate(-2deg) scale(1.05);}
+
+.how-photo{
+  flex:1;min-height:220px;border-radius:var(--r-md);overflow:hidden;
+  box-shadow:0 20px 44px rgba(41,25,66,.16);
+}
+.how-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.how-photo:hover img{transform:scale(1.05);}
 
 /* =====================================================
    MENTOR VS TRENER
@@ -780,7 +786,12 @@ footer .brand-txt small{color:#a99cc9;font-family:var(--font);font-weight:500;te
   .pt-btn{flex:1;justify-content:center;padding:12px 8px;font-size:.82rem;}
   .role-panel,.tl-col{padding:26px 22px;}
   .cert-stamp{right:6px;}
+  .hero{overflow-x:clip;}
+  .hero-blob.b1{width:320px;height:320px;top:-120px;left:-100px;}
+  .hero-blob.b2{width:260px;height:260px;bottom:40px;right:-90px;}
+  .pill-row{max-width:100%;}
 }
+
 @media(max-width:400px){
   .pill{font-size:.92rem;padding:5px 12px;}
   .btn-lg{padding:16px 26px;}
