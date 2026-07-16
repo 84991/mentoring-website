@@ -679,7 +679,7 @@ h3{font-size:1.3rem;}
 .fq-a p{margin:0 0 22px;color:var(--ink-soft);font-size:.95rem;max-width:66ch;}
 
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:90px;align-items:center;}
-.faq-photo{position:relative; padding-top:30px;}
+.faq-photo{position:relative; padding-top:20px;}
 .photo-spin{
   position:relative;
   transform:rotate(-2.5deg);
