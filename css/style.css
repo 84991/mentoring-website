@@ -545,7 +545,7 @@ h3{font-size:1.3rem;}
 .stories{background:#fff;padding:110px 0;}
 .stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;}
 .story{
-  background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r-md);padding:28px 26px;
+  background:var(--paper);border:1.5px solid var(--orange-deep);border-radius:var(--r-md);padding:28px 26px;
   display:flex;flex-direction:column;gap:20px;
   transition:transform .25s ease,box-shadow .25s ease;
 }
